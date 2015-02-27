@@ -1,0 +1,6 @@
+public class NQueens{
+    char[][] board;
+    public NQueens(int size){
+	board=new char[size][size];
+    }
+    
