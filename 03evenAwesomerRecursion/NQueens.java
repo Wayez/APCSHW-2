@@ -55,7 +55,7 @@ public class NQueens{
     }
     public boolean NQH(int r, int c){
 	System.out.println(this);
-	wait(1000);
+	wait(10);
 	if (r<0 || r>=board.length || c<0)
 	    return false;
 	if(!valid(r, c))
@@ -72,24 +72,24 @@ public class NQueens{
     }
     public boolean valid(int r, int c){
         for (int x=0; x<board.length; x++){
-	    int x2=0;
 	    if (board[r][x]=='Q')
 		return false;
-	    while (r+x2<board.length&&r-x2>=0&&x+x2<board.length&&x-x2>=0 ){
-		if(board[r+x2][x+x2]=='Q')
-		    return false;
-		if(board[r-x2][x+x2]=='Q')
-		    return false;
-		if(board[r+x2][x-x2]=='Q')
-		    return false;
-		if(board[r+x2][x-x2]=='Q')
-		    return false;
-		x2++;
-	    }
 	}
 	for (int y=0; y<board.length; y++){
 	    if (board[y][c]=='Q')
 		return false;
+	}
+	int x2=0;
+	while (r+x2<board.length&&r-x2>=0&&c+x2<board.length&&c-x2>=0 ){
+	    if(board[r+x2][c+x2]=='Q')
+		return false;
+	    if(board[r-x2][c+x2]=='Q')
+		return false;
+	    if(board[r+x2][c-x2]=='Q')
+		    return false;
+	    if(board[r+x2][c-x2]=='Q')
+		return false;
+	    x2++;
 	}
 	return true;
     }
