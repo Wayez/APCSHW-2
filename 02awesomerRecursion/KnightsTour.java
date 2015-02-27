@@ -38,7 +38,7 @@ public class KnightsTour{
 	    }
 	    ans += "\n";
 	}
-	return hide + clear + + go(0,0) + ans + "\n" + show;
+	return hide + clear  + go(0,0) + ans + "\n" + show;
     }
     
     public KnightsTour(int size){
@@ -66,8 +66,10 @@ public class KnightsTour{
 	if (currentMoveNumber==board.length*board[0].length)
 	    return true;
 	if (solve( x + 1, y + 2,currentMoveNumber + 1) ||  solve( x - 1, y + 2,currentMoveNumber + 1) ||  solve( x + 1, y - 2,currentMoveNumber + 1)||  solve( x - 1, y - 2,currentMoveNumber + 1) ||  solve( x + 2, y + 1,currentMoveNumber + 1) || solve( x + 2, y- 1,currentMoveNumber + 1) ||  solve( x - 2, y + 1,currentMoveNumber + 1) || solve( x - 2, y - 1,currentMoveNumber + 1)){
-	    return true;
 	    board[x][y]=currentMoveNumber;
+	    return true;
 	}
+	
+	return false;
     }
 }
