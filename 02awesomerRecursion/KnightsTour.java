@@ -25,24 +25,32 @@ public class KnightsTour{
 	catch (InterruptedException e) {
 	}
     }
+
+    public String name(){
+	return "chowdhury.wayez";
+    }
     
     public String toString(){
 	String ans = "\n";
-	//build your knights tour here...
+	for (int x=0 ; x < board.length; x++){
+	    for (int y=0 ; y< board[0].length;y++){
+		ans += board[x][y] + "\t";
+	    }
+	}
 	return hide + go(0,0) + ans + "\n" + show;
     }
     
     public KnightsTour(int size){
-	
+	board=new int[size][size];
     }
     
     
-    public void solve(){
-	
+    public boolean solve(){
+	return solve(0,0,1);
     }
     
-    public void solve(int startx, int starty){
-	
+    public boolean solve(int startx, int starty){
+	return solve(startx, starty, 1);
     }
     
     
@@ -50,8 +58,13 @@ public class KnightsTour{
     public boolean solve(int x,int y,int currentMoveNumber){
 	System.out.println(this);
 	wait(20);
-	
-	return false;
+	if (board[x][y]>0)
+	    return false;
+	if (x >= 0 && x < board.length && y >= 0 && y < board[0].length)
+	    return false;
+	if (currentMoveNumber==board.length*board[0].length)
+	    return true;
+	board[x][y]=currentMoveNumber;
+	return solve( x + 1, y + 2,currentMoveNumber + 1) ||  solve( x - 1, y + 2,currentMoveNumber + 1) ||  solve( x + 1, y - 2,currentMoveNumber + 1)||  solve( x - 1, y - 2,currentMoveNumber + 1) ||  solve( x + 2, y + 1,currentMoveNumber + 1) || solve( x + 2, y- 1,currentMoveNumber + 1) ||  solve( x - 2, y + 1,currentMoveNumber + 1) || solve( x - 2, y - 1,currentMoveNumber + 1);
     }
-    
 }
