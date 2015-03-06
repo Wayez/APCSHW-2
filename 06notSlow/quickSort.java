@@ -23,19 +23,33 @@ public class quickSort{
 	//int partition = si + r.nextInt(ei-si+1);
 	int pivot = ary[si];
 	System.out.println(pivot);
-	int y = si;
-	while (si + 1!= ei){
-	    if (ary[y]<pivot){
-		D[si + 1]=ary[y];
+	int start = si;
+	int end= ei;
+	//int y = si;
+	// while (si +1 != ei){
+	//     if (ary[y]<pivot){
+	// 	D[si]=ary[y+1];
+	// 	si++;
+	//     } else {
+	// 	D[ei]=ary[y+1];
+	// 	ei--;
+	//     }
+	//     y++;
+	//     System.out.println(Arrays.toString(D));
+	// }
+	for (int y = start + 1; y < end; y++){
+	    if (ary[y] < pivot){
+		D[si]=ary[y];
 		si++;
 	    } else {
 		D[ei]=ary[y];
 		ei--;
 	    }
-	    y++;
 	    System.out.println(Arrays.toString(D));
 	}
 	D[si]=pivot;
+	System.out.println(Arrays.toString(D));
+				       
     }
 }
 	    
