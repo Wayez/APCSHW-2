@@ -42,7 +42,7 @@ public class NQueens{
 	    for (int y=0 ; y< board[0].length;y++){
 		ans += board[x][y] + "\t";
 	    }
-	    ans += "\n";
+	    ans += "\n\n";
 	}
 	return hide + clear  + go(0,0) + ans + "\n" + show;
     }
