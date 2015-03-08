@@ -1,6 +1,6 @@
 import java.util.*;
 import java.io.*;
-public class quickSort{
+public class quickSelect{
     public static void main(String[] args){
 	int[] ary = new int[10];
 	Random rand = new Random();
@@ -37,7 +37,7 @@ public class quickSort{
 	//     y++;
 	//     System.out.println(Arrays.toString(D));
 	// }
-	for (int y = start + 1; y < end; y++){
+	for (int y = start + 1; y <= end; y++){
 	    if (ary[y] < pivot){
 		D[si]=ary[y];
 		si++;
