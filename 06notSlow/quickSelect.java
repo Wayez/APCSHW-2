@@ -16,11 +16,11 @@ public class quickSelect{
 		}
 		if (digit > 0 && digit <= ary.length){
 		    //System.out.println(Arrays.toString(ary));
-		    if (digit%10==1 && digit/10%10!=1){
+		    if (digit%10==1 && digit/10%10!=1)
 			System.out.println("The " + digit + "st Digit is:");
 		    else if (digit%10==2 && digit/10%10!=1)
 			System.out.println("The " + digit + "nd Digit is:");
-		    else if (digit%10==3 digit/10%10!=1)
+		    else if (digit%10==3 && digit/10%10!=1)
 			System.out.println("The " + digit + "rd Digit is:");
 		    else 
 			System.out.println("The " + digit + "th Digit is:");
