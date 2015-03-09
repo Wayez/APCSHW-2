@@ -3,15 +3,37 @@ import java.io.*;
 public class quickSelect{
     public static int[] ary;
     public static void main(String[] args){
-	ary = new int[10];
-	Random rand = new Random();
-	for (int x = 0; x < ary.length; x++){
-	    int num = rand.nextInt(1000);
-	    ary[x] = num;
+	if (args.length==0)
+	    System.out.println( "What digit of array should I find?");
+	else{
+	    try {
+		int digit = Integer.parseInt(args[0]);
+		ary = new int[10];
+		Random rand = new Random();
+		for (int x = 0; x < ary.length; x++){
+		    int num = rand.nextInt(1000);
+		    ary[x] = num;
+		}
+		if (digit > 0 && digit <= ary.length){
+		    System.out.println(Arrays.toString(ary));
+		    if (digit%10==1)
+			System.out.println("The " + digit + "st Digit is:");
+		    else if (digit%10==2)
+			System.out.println("The " + digit + "nd Digit is:");
+		    else if (digit%10==3)
+			System.out.println("The " + digit + "rd Digit is:");
+		    else 
+			System.out.println("The " + digit + "th Digit is:");
+		    System.out.println(select(digit - 1));
+		}
+		else {
+		    System.out.println("Choose an integer from 1 to 10");
+		}
+	    } catch (Exception E){
+		System.out.println("Choose ONE integer from 1 to 10");
+	    }
 	}
-	System.out.println(Arrays.toString(ary));
-	System.out.println(select(9));
-    }
+    }	    
     public static int select(int k){
 	//if (nums.length==0)
 	    //  return nums[0];
@@ -20,9 +42,9 @@ public class quickSelect{
     public static int selectH(int si, int ei, int k){
 	Random rand = new Random();
 	int guess = rand.nextInt(ei-si+1);
-	System.out.println(guess + "**");
-	int ans = partition( si, ei, guess);
-	System.out.println(ans + "*");
+	//System.out.println(guess + "**");
+	int ans = partition( si, ei, si+ guess);
+	//System.out.println(ans + "*");
 	if (ans == k)
 	    return ary[k];
 	if (ans > k)
@@ -59,7 +81,7 @@ public class quickSelect{
 	for (int z = 0; z < D.length; z++){
 	    ary[z]=D[z];
 	}
-	System.out.println(Arrays.toString(D));
+	//System.out.println(Arrays.toString(D));
 	return si;			       
     }
 }
