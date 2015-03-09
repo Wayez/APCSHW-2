@@ -10,7 +10,7 @@ public class quickSelect{
 	    ary[x] = num;
 	}
 	System.out.println(Arrays.toString(ary));
-	System.out.println(select(3));
+	System.out.println(select(9));
     }
     public static int select(int k){
 	//if (nums.length==0)
