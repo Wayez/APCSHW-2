@@ -8,14 +8,14 @@ public class quickSelect{
 	else{
 	    try {
 		int digit = Integer.parseInt(args[0]);
-		ary = new int[10];
+		ary = new int[1000000];
 		Random rand = new Random();
 		for (int x = 0; x < ary.length; x++){
-		    int num = rand.nextInt(1000);
+		    int num = rand.nextInt(10000);
 		    ary[x] = num;
 		}
 		if (digit > 0 && digit <= ary.length){
-		    System.out.println(Arrays.toString(ary));
+		    //System.out.println(Arrays.toString(ary));
 		    if (digit%10==1)
 			System.out.println("The " + digit + "st Digit is:");
 		    else if (digit%10==2)
@@ -68,7 +68,7 @@ public class quickSelect{
 	int start = si;
 	int end= ei;
 	for (int y = start + 1; y <= end; y++){
-	    if (ary[y] < pivot){
+	    if (ary[y] <= pivot){
 		D[si]=ary[y];
 		si++;
 	    } else {
