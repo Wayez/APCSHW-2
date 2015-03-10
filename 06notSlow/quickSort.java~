@@ -8,7 +8,10 @@ public class quickSort{
 	    int num = rand.nextInt(1000);
 	    ary[x] = num;
 	}
-	
+	System.out.println(Array.toString(ary));
+	System.out.prinyln(Array.toString(sort(ary)));
+    }
+			   
 
 
 

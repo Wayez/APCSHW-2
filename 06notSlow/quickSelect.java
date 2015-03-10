@@ -11,7 +11,8 @@ public class quickSelect{
 		ary = new int[1000000];
 		Random rand = new Random();
 		for (int x = 0; x < ary.length; x++){
-		    int num = rand.nextInt(10000);
+		    //int num = rand.nextInt(10000);
+		    int num = 0;
 		    ary[x] = num;
 		}
 		if (digit > 0 && digit <= ary.length){
