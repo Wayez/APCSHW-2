@@ -1,0 +1,21 @@
+import java.util.*;
+import java.io.*;
+public class quickSort{
+    public static void main(String[] args){
+	ary = new int[10];
+	Random rand = new Random();
+	for (int x = 0; x < ary.length; x++){
+	    int num = rand.nextInt(1000);
+	    ary[x] = num;
+	}
+	System.out.println(Array.toString(ary));
+	System.out.prinyln(Array.toString(sort(ary)));
+    }
+			   
+
+
+
+
+
+
+}
