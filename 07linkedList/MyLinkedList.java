@@ -1,12 +1,12 @@
 public class MyLinkedList{
-    private LNode head, current, end;
+    private LNode head, current;
     public String toString(){
 	
     }
     public int get(int index){
     
     }
-    public void set(int index, int value){
+    public int set(int index, int value){
 	
     }
     public void add(int value){
@@ -19,7 +19,12 @@ public class MyLinkedList{
 
     }
     public int size(){
-	
+	current = head;
+	int length;
+	while(current.next!=null){
+	    length++;
+	}
+	return length;
     }
     public int indexOf(int value){
 
