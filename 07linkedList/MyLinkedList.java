@@ -2,21 +2,23 @@ public class MyLinkedList{
     private LNode head, current;
     public String toString(){
 	if (head != null){
-	    String ans = ":[";
+	    String ans = "[";
 	    LNode temp = head;
-	    while (temp.getNext != null){
+	    while (temp.getNext() != null){
 		ans += " " + temp.getValue() + ",";
 		temp = temp.getNext();
 	    }
 	    ans += " " + temp.getValue() +" ]";
+	    return ans;
 	}
+	return "[ ]";
     }
-    public int get(int index){
+    // public int get(int index){
     
-    }
-    public int set(int index, int value){
+    // }
+    // public int set(int index, int value){
 	
-    }
+    // }
     public boolean add(int value){
 	LNode next = new LNode(value);
 	if (head == null){
@@ -24,29 +26,29 @@ public class MyLinkedList{
 	    return true;
 	}
 	current = head;
-	while (current.getNext != null){
+	while (current.getNext() != null){
 	    current = current.getNext();
 	}
 	current.setNext(next);
 	return true;
     }
-    public boolean add(int index, int value){
+    // public boolean add(int index, int value){
 
-    }
+    // }
     public void remove(int index){
 
     }
-    public int size(){
-	current = head;
-	int length;
-	while(current.next!=null){
-	    length++;
-	}
-	return length;
-    }
-    public int indexOf(int value){
+    // public int size(){
+    // 	current = head;
+    // 	int length;
+    // 	while(current.getNext()!=null){
+    // 	    length++;
+    // 	}
+    // 	return length;
+    // }
+    // public int indexOf(int value){
 
-    }
+    // }
 
     public static void main(String[] args){
 	MyLinkedList A = new MyLinkedList();

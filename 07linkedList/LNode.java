@@ -10,7 +10,7 @@ public class LNode{
     public int getValue(){
 	return value;
     }
-    public void setNext(){
+    public void setNext(LNode next){
 	this.next=next;
     }
     public LNode getNext(){
