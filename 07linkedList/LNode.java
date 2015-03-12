@@ -17,7 +17,6 @@ public class LNode{
 	return next;
     }
     public String toString(){
-	return Integer.toString(value) + ",";
-	//the comma to annoy mr k
+	return Integer.toString(value);
     }
 }
