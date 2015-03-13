@@ -14,9 +14,19 @@ public class MyLinkedList{
 	}
 	return "[ ]";
     }
-    // public int get(int index){
-    
-    // }
+    public int get(int index){
+	int currentIndex = 0;
+	LNode temp = head;
+	while (currentIndex != index){
+	    currentIndex++;
+	    temp = temp.getNext();
+	}
+	if (currentIndex == index){
+	    return temp.getValue();
+	} else {
+	    throw new IndexOutOfBoundsException();
+	}
+    }
     // public int set(int index, int value){
 	
     // }
@@ -56,6 +66,7 @@ public class MyLinkedList{
 	A.add(7);
 	System.out.println(A.toString());
 	System.out.println(A.size());
+	System.out.println(A.get(3));
     }
 }
     
