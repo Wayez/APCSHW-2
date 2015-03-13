@@ -27,9 +27,22 @@ public class MyLinkedList{
 	    throw new IndexOutOfBoundsException();
 	}
     }
-    // public int set(int index, int value){
-	
-    // }
+    public int set(int index, int value){
+	int currentIndex = 0;
+	LNode temp = head;
+	LNode next = new LNode(value);
+	while (currentIndex != index){
+	    currentIndex++;
+	    temp = temp.getNext();
+	}
+	if (currentIndex == index){
+	    int i = temp.getValue();
+	    temp.setValue(value);
+	    return i;
+	} else {
+	    throw new IndexOutOfBoundsException();
+	}
+    }
     public boolean add(int value){
 	LNode next = new LNode(value);
 	if (head == null){
@@ -67,6 +80,8 @@ public class MyLinkedList{
 	System.out.println(A.toString());
 	System.out.println(A.size());
 	System.out.println(A.get(3));
+	System.out.println(A.set(3, 3));
+	System.out.println(A.toString());
     }
 }
     
