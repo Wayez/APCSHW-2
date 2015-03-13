@@ -1,5 +1,6 @@
 public class MyLinkedList{
-    private LNode head, current;
+    private LNode head, current, tail;
+    private int size;
     public String toString(){
 	if (head != null){
 	    String ans = "[";
@@ -23,13 +24,14 @@ public class MyLinkedList{
 	LNode next = new LNode(value);
 	if (head == null){
 	    head = next;
+	    tail = head;
+	    size++;
 	    return true;
 	}
+	tail.setNext(next);
+	tail = next;
 	current = head;
-	while (current.getNext() != null){
-	    current = current.getNext();
-	}
-	current.setNext(next);
+	size++;
 	return true;
     }
     // public boolean add(int index, int value){
@@ -38,17 +40,12 @@ public class MyLinkedList{
     public void remove(int index){
 
     }
-    // public int size(){
-    // 	current = head;
-    // 	int length;
-    // 	while(current.getNext()!=null){
-    // 	    length++;
-    // 	}
-    // 	return length;
-    // }
-    // public int indexOf(int value){
-
-    // }
+    public int size(){
+     	return size;
+    }
+    //public int indexOf(int value){
+	
+    //}
 
     public static void main(String[] args){
 	MyLinkedList A = new MyLinkedList();
@@ -58,6 +55,7 @@ public class MyLinkedList{
 	A.add(5);
 	A.add(7);
 	System.out.println(A.toString());
+	System.out.println(A.size());
     }
 }
     
