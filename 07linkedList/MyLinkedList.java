@@ -126,41 +126,46 @@ public class MyLinkedList<T>{
 	return -1;
     }
 
-    public static void main(String[] args){
-	MyLinkedList<Integer> A = new MyLinkedList<Integer>();
-	A.add(1);
-	A.add(2);
-	A.add(3);
-	A.add(5);
-	A.add(7);
-	System.out.println(A.toString());
-	System.out.println(A.size());
-	System.out.println(A.get(4));
-	System.out.println(A.set(4, 3));
-	System.out.println(A.toString());
-	System.out.println(A.remove(4));
-	System.out.println(A.size());
-	System.out.println(A.toString());
-	System.out.println(A.add(4, 5));
-	System.out.println(A.size());
-	System.out.println(A.toString());
-	MyLinkedList<String> B = new MyLinkedList<String>();
-	B.add("A");
-	B.add("B");
-	B.add("C");
-	B.add("E");
-	B.add("G");
-	System.out.println(B.toString());
-	System.out.println(B.size());
-	System.out.println(B.get(4));
-	System.out.println(B.set(4, "C"));
-	System.out.println(B.toString());
-	System.out.println(B.remove(4));
-	System.out.println(B.size());
-	System.out.println(B.toString());
-	System.out.println(B.add(4, "E"));
-	System.out.println(B.size());
-	System.out.println(B.toString());
-    }
+    // public static void main(String[] args){
+    // 	MyLinkedList<Integer> A = new MyLinkedList<Integer>();
+    // 	A.add(1);
+    // 	A.add(2);
+    // 	A.add(3);
+    // 	A.add(5);
+    // 	A.add(7);
+    // 	System.out.println(A.toString());
+    // 	System.out.println(A.size());
+    // 	System.out.println(A.get(4));
+    // 	System.out.println(A.set(4, 3));
+    // 	System.out.println(A.toString());
+    // 	System.out.println(A.remove(4));
+    // 	System.out.println(A.size());
+    // 	System.out.println(A.toString());
+    // 	System.out.println(A.add(4, 5));
+    // 	System.out.println(A.size());
+    // 	System.out.println(A.toString());
+    // 	System.out.println(A.indexOf(5));
+    // 	MyLinkedList<String> B = new MyLinkedList<String>();
+    // 	B.add("AP");
+    // 	B.add("BC");
+    // 	B.add("CD");
+    // 	B.add("EA");
+    // 	B.add("GO");
+    // 	System.out.println(B.toString());
+    // 	System.out.println(B.size());
+    // 	System.out.println(B.get(4));
+    // 	System.out.println(B.set(4, "CE"));
+    // 	System.out.println(B.toString());
+    // 	System.out.println(B.remove(4));
+    // 	System.out.println(B.size());
+    // 	System.out.println(B.toString());
+    // 	System.out.println(B.add(4, "ED"));
+    // 	System.out.println(B.size());
+    // 	System.out.println(B.toString());
+    // 	System.out.println(B.indexOf("AP"));
+    // 	System.out.println(B.indexOf("AB"));
+
+		
+    // }
 }
     
