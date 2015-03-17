@@ -1,8 +1,24 @@
-public class MyLinkedList<T>{
+import java.util.*;
+import java.io.*;
+public class MyLinkedList<T> implements Iterable<T>{
     private LNode<T> head, current, tail;
     private int size;
     public String name(){
 	return "chowdhury.wayez";
+    }
+    public Iterator<T> iterator(){
+	Iterator<Integer> c = new Iterator<Integer>();
+	return c;
+    }
+    public class MyIterator<T> implements Iterator<T>{
+	public boolean hasNext(){
+	    return true;
+	}
+	public T next(){
+	    return "0";
+	}
+	public void remove(){
+	}
     }
     public String toString(){
 	if (head != null){
