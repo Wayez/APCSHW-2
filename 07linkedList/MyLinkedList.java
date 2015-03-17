@@ -33,7 +33,7 @@ public class MyLinkedList<T>{
     public T set(int index, T value){
 	int currentIndex = 0;
 	LNode<T> temp = head;
-	LNode<T> next = new LNode(value);
+	LNode<T> next = new LNode<T>(value);
 	while (currentIndex != index && temp != null){
 	    currentIndex++;
 	    temp = temp.getNext();
@@ -47,7 +47,7 @@ public class MyLinkedList<T>{
 	}
     }
     public boolean add(T value){
-	LNode<T> next = new LNode(value);
+	LNode<T> next = new LNode<T>(value);
 	if (head == null){
 	    head = next;
 	    tail = head;
@@ -63,7 +63,7 @@ public class MyLinkedList<T>{
     public boolean add(int index, T value){
 	int currentIndex = 0;
 	LNode<T> temp = head;
-	LNode<T> next = new LNode(value);
+	LNode<T> next = new LNode<T>(value);
 	if (currentIndex == 0){
 	    next.setNext(head);
 	    head = next;
