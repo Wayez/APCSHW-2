@@ -81,7 +81,7 @@ public class MyLinkedList<T>{
 	    size++;
 	}
 	return true;
-	}
+    }
     public T remove(int index){
 	int currentIndex = 0;
 	LNode<T> temp = head;
@@ -127,7 +127,7 @@ public class MyLinkedList<T>{
     }
 
     public static void main(String[] args){
-	MyLinkedList A = new MyLinkedList();
+	MyLinkedList<Integer> A = new MyLinkedList<Integer>();
 	A.add(1);
 	A.add(2);
 	A.add(3);
