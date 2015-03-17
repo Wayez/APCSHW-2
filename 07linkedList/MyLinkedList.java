@@ -64,7 +64,7 @@ public class MyLinkedList<T>{
 	int currentIndex = 0;
 	LNode<T> temp = head;
 	LNode<T> next = new LNode<T>(value);
-	if (currentIndex == 0){
+	if (index == 0){
 	    next.setNext(head);
 	    head = next;
 	} else {
@@ -85,7 +85,7 @@ public class MyLinkedList<T>{
     public T remove(int index){
 	int currentIndex = 0;
 	LNode<T> temp = head;
-	if (currentIndex == 0){
+	if (index == 0){
 	    if (size != 0){ 
 		T i = head.getValue();
 		head = head.getNext();
@@ -144,6 +144,23 @@ public class MyLinkedList<T>{
 	System.out.println(A.add(4, 5));
 	System.out.println(A.size());
 	System.out.println(A.toString());
+	MyLinkedList<String> B = new MyLinkedList<String>();
+	B.add("A");
+	B.add("B");
+	B.add("C");
+	B.add("E");
+	B.add("G");
+	System.out.println(B.toString());
+	System.out.println(B.size());
+	System.out.println(B.get(4));
+	System.out.println(B.set(4, "C"));
+	System.out.println(B.toString());
+	System.out.println(B.remove(4));
+	System.out.println(B.size());
+	System.out.println(B.toString());
+	System.out.println(B.add(4, "E"));
+	System.out.println(B.size());
+	System.out.println(B.toString());
     }
 }
     
