@@ -1,0 +1,46 @@
+public class Driver{
+    
+    public static boolean equals(double a,double b){
+	return (a==0 && b==0) || a<1.0E-160 || a!=0 && (a-b)/a < 0.000001;
+    }
+    
+    public static void main(String[]arrr){
+	Recursion recursion = new Recursion();
+	int score = 0;
+	int total = 0;
+	System.out.println(recursion.sqrt(0.0));
+	System.out.println("\nStarting Sqrt: "+recursion.name()+":");
+	
+	
+	double[]values = {169.0,1.0,0.00000001,-100.0,0.0};
+	String f="sqrt(";
+	for(double tester : values){
+	    total++;
+	    try{
+		double v = recursion.sqrt(tester);
+		
+		if(equals(Math.sqrt(tester),v)){
+		    System.out.println(f+tester+") passed (+1).");
+		    score++;
+		    
+		}else{
+		    System.out.println(f+tester+") failed: "+v);
+		}	
+	    }catch(IllegalArgumentException e){							
+		if(tester<0.0){
+		    System.out.println(f+tester+") passed exception thrown (+1).");
+		    score++;
+		}else{
+		    System.out.println(f+tester+") failed exception thrown at wrong time");
+		}	
+	    }catch(StackOverflowError t) {
+		System.out.println("Caught "+t);
+		
+	    }
+	}
+	System.out.println("#"+recursion.name()+": "+score+" out of"+total+"\n");
+	
+	
+	
+    }
+}

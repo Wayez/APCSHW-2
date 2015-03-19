@@ -16,7 +16,7 @@ public class Recursion implements hw1{
 	System.out.println(a.sqrt(1));
 	System.out.println(a.sqrt(25));
 	System.out.println(a.sqrt(100000000));
-	System.out.println(a.sqrt(-100000000));
+	System.out.println(a.fact(-100000000));
 		
     }
     public String name(){

@@ -16,11 +16,11 @@ public class Recursion implements hw1{
 	System.out.println(a.sqrt(1));
 	System.out.println(a.sqrt(25));
 	System.out.println(a.sqrt(100000000));
-	System.out.println(a.fact(-100000000));
+	System.out.println(a.sqrt(.000000001));
 		
     }
     public String name(){
-	return "Chowdhury, Wayez";
+	return "chowdhury.wayez";
     }
     public void nNeg(double n){
 	if (n<0){
@@ -31,7 +31,7 @@ public class Recursion implements hw1{
 	nNeg(n*1.0);
 	if (n>=2)
 	    return n*fact(n-1);
-	return n;
+	return 1;
     }
     public int fib(int n){
 	nNeg(n*1.0);
@@ -45,7 +45,7 @@ public class Recursion implements hw1{
 	return sqrtH(n, n / 2);
     }
     public double sqrtH(double n, double guess){
-	if (guess*guess>n-0.00000001 && guess*guess<n+0.00000001)
+	if (guess*guess>n-0.0000000001 && guess*guess<n+0.0000000001)
 	    return guess;
 	return sqrtH(n, (n / guess + guess) / 2);
 
