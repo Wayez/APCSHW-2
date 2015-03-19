@@ -61,15 +61,15 @@ public class KnightsTour{
 	//wait(20);
 	if (x <0 || x >= board.length || y < 0 || y >= board[0].length)
 	    return false;
-	if (board[x][y]>0)
+	if (board[y][x]>0)
 	    return false;
+	board[y][x]=currentMoveNumber;
 	if (currentMoveNumber==board.length*board[0].length)
 	    return true;
-	board[x][y]=currentMoveNumber;
 	if (solve( x + 1, y + 2,currentMoveNumber + 1) ||  solve( x - 1, y + 2,currentMoveNumber + 1) ||  solve( x + 1, y - 2,currentMoveNumber + 1)||  solve( x - 1, y - 2,currentMoveNumber + 1) ||  solve( x + 2, y + 1,currentMoveNumber + 1) || solve( x + 2, y- 1,currentMoveNumber + 1) ||  solve( x - 2, y + 1,currentMoveNumber + 1) || solve( x - 2, y - 1,currentMoveNumber + 1)){
 	    return true;
 	}
-	board[x][y]=0;
+	board[y][x]=0;
 	return false;
     }
 }
