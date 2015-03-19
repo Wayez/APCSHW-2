@@ -22,7 +22,7 @@ public class lakeMaking{
 	}
 	
 	for (int z: lake.length()){
-	    for (int w: lake[0].length()){
+	    for (int w: lake[].length()){
 		if (z >= x && z < x + 3 && w <= y && w > y - 3){
 		    if (lake[z][w]>max){
 			max=lake[z][w];
@@ -31,7 +31,7 @@ public class lakeMaking{
 	    }
 	}
 	for (int z: lake.length()){
-	    for (int w: lake[0].length()){
+	    for (int w: lake[].length()){
 		if (z>=x&&z<x+3&&w<=y&&w>y-3){
 		    if (lake[z][w]>max-depth){
 			lake[z][w]=max-depth;
@@ -41,4 +41,4 @@ public class lakeMaking{
 	}
 
     public static boolean solve(int x, int y){
-	dog 
+	dig
