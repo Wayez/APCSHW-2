@@ -1,23 +1,30 @@
 import java.util.*;
 import java.io.*;
 public class MyLinkedList<T> implements Iterable<T>{
-    private LNode<T> head, current, tail;
+    private LNode<T> head, tail;
     private int size;
     public String name(){
 	return "chowdhury.wayez";
     }
     public Iterator<T> iterator(){
-	Iterator<Integer> c = new Iterator<Integer>();
-	return c;
+	return new MyLinkedListIterator<T>(head);
     }
-    public class MyIterator<T> implements Iterator<T>{
+    public class MyLinkedListIterator<T> implements Iterator<T>{
+	public LNode<T> current;
+	public MyLinkedListIterator(LNode<T> current){
+	    this.current=current;
+	}
 	public boolean hasNext(){
-	    return true;
+	    return current.getNext() != null;
 	}
 	public T next(){
-	    return "0";
+	    if (hasNext())
+		return current.getNext().getValue();
+	    throw new NoSuchElementException();
 	}
+
 	public void remove(){
+	    throw new UnsupportedOperationException();
 	}
     }
     public String toString(){
@@ -72,7 +79,6 @@ public class MyLinkedList<T> implements Iterable<T>{
 	}
 	tail.setNext(next);
 	tail = next;
-	current = head;
 	size++;
 	return true;
     }
