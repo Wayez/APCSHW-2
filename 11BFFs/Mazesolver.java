@@ -9,7 +9,7 @@ public class Mazesolver{
     private String clear =  "\033[2J";
     private String hide =  "\033[?25l";
     private String show =  "\033[?25h";
-
+    
     public Mazesolver(String filename){
 	startx = -1;
 	starty = -1;
@@ -54,10 +54,10 @@ public class Mazesolver{
     }
     
     
-    private String color(int foreground,int background){
+    /** private String color(int foreground,int background){
 	return ("\033[0;" + foreground + ";" + background + "m");
-    }
-    
+	}**/
+
     public void clearTerminal(){
 	System.out.println(clear);
     }
@@ -78,12 +78,12 @@ public class Mazesolver{
 	    }
 	    char c =  maze[i % maxx][i / maxx];
 	    if(c == '#'){
-		ans += color(38,47)+c;
+		ans += c;//color(38,47)+c;
 	    }else{
-		ans += color(32,40)+c;
+		ans += c;//color(32,40)+c;
 	    }
 	}
-	return hide + go(0,0) + ans + "\n" + show + color(37,40);
+	return hide + go(0,0) + ans + "\n" + show;// + color(37,40);
     }
     
     public boolean solve(){
