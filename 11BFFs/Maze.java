@@ -53,7 +53,9 @@ public class Maze{
 	return toString(false);
     }
    
-
+    public void clearTerminal(){
+	System.out.println(clear);
+    }
     public String toString(boolean animate){
 	if (animate){
 	    String ans = "Solving a maze that is " + maxx + " by " + maxy + "\n";
