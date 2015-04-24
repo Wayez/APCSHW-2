@@ -114,23 +114,7 @@ public class Maze{
     }
     
     public boolean solve(int x,int y){
-	System.out.println(this);
-	wait(20);
-	if(maze[x][y] == 'E'){
-	    return true;
-	}
-	if(maze[x][y] == ' '){
-	    //mark the floor with @
-	    maze[x][y] = '@';
-	    //recursion ho!!
-	    if( solve(x + 1, y) || solve( x, y + 1) ||
-		solve(x - 1, y) ||	solve(x, y - 1)){
-		return true;
-	    }
-	    //replace the @ with a .
-	    maze[x][y] = '.';
-	}
-	return false;//by default the maze didn't get solved
+       
     }
 
     public boolean solveBFS(){
