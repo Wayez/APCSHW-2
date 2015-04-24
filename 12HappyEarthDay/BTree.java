@@ -66,6 +66,19 @@ public class BTree<E> {
       added to randomly.
       ====================*/
     private void add( TreeNode<E> curr, TreeNode<E> bn ) {
+	double x = math.random(1);
+	if (curr.hasSpace()){
+	    if (curr.getC1() == null)
+		curr.setC1(bn);
+	    else 
+		curr.setC2(bn);
+	}
+	else {
+	    if (x >= 0.5) 
+		add( curr.getC1(), bn);
+	    else 
+		add( curr.getC2(), bn);
+	}		
     }
     
     public void traverse( int mode) {
