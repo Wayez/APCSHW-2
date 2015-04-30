@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+
+public class TreeNode<E> {
+    
+    public TreeNode p = null;
+    public TreeNode c1 = null;
+    public TreeNode c2 = null;
+    public E value;
+
+    public TreeNode(){
+	this(null);
+    }
+
+    public TreeNode(int value){
+	this.value = value;
+    }
+    
+    public boolean hasSpace(){
+	return c1 == null || c2 == null;
+    }
+    
+    public TreeNode getC1(){
+	return c1;
+    }
+
+    public TreeNode getC2(){
+	return c2;
+    }
+    
+}
