@@ -41,4 +41,4 @@ public class lakeMaking{
 	}
 
     public static boolean solve(int x, int y){
-	dog 
+	dig
