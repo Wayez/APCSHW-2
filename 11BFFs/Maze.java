@@ -142,6 +142,7 @@ public class Maze{
 	}
     }
     
+<<<<<<< HEAD
     public boolean solve(boolean animate, int mode){
         front = new Frontier();
 	for (int x = 0; x < maze.length; x++){
@@ -180,6 +181,10 @@ public class Maze{
 	}
 	return false;
 	    
+=======
+    public boolean solve(int x,int y){
+       
+>>>>>>> 0fcdc231c0de79b5ec964ce15e8d7e24edba6f8f
     }
 
      public boolean solveBFS(){

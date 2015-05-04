@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.*;
 public class MyDeque<T>{
     public Object[] stuff = new Object[10];
@@ -168,3 +169,13 @@ public class MyDeque<T>{
     }
 }
     
+=======
+public class MyDeque<T>{
+    public ArrayList<T> stuff = new ArrayList<T>;
+    public void addFirst(T value){
+    }
+    public void addLast(T value){
+    }
+}
+    
+>>>>>>> 0fcdc231c0de79b5ec964ce15e8d7e24edba6f8f
