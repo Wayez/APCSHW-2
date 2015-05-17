@@ -77,13 +77,20 @@ public class MyHeap{
         alpha.add(35);
         alpha.add(17);
         alpha.add(9);
+        System.out.println(alpha.toString());
+        alpha.remove();
+        alpha.remove();
         alpha.add(11);
+        System.out.println(alpha.toString());
         alpha.add(67);
         alpha.add(14);
         alpha.add(5);
         alpha.add(78);
         alpha.add(55);
         System.out.println(alpha.toString());
-        //alpha.remove();
+        alpha.remove();
+        alpha.remove();
+        alpha.remove();
+        System.out.println(alpha.toString());
     }
 }
