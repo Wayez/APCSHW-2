@@ -32,18 +32,45 @@ public class MyHeap{
         return ans;
     }
     public int remove(){
-        int root = peak();
-        int currentLeafIndex = heap.get(0);
-        int currentLeaf = heap.remove(currentLeafIndex);
-        int parentIndex = currentLeafIndex / 2;
-        while (heap.get(parentIndex) != root){
-            currentLeaf = heap.set(parentIndex, currentLeaf);
-            currentLeafIndex = parentIndex;
-            parentIndex = parentIndex / 2;
+        int root = peek();
+        int currentLeafIndex = 1;
+        int last = heap.get(0);
+        heap.set(1, heap.remove(last));
+        int favoriteChildIndex = findFavoriteChild(currentLeafIndex);
+        if (isMax){
+            while (favoriteChildIndex != -1 && heap.get(currentLeafIndex) < heap.get(favoriteChildIndex)){
+                int temp = heap.set(favoriteChildIndex, heap.get(currentLeafIndex));
+                heap.set(currentLeafIndex, temp);
+                currentLeafIndex = favoriteChildIndex;
+                favoriteChildIndex = findFavoriteChild(currentLeafIndex);
+            }
+        } else {
+            while (favoriteChildIndex != -1 && heap.get(currentLeafIndex) > heap.get(favoriteChildIndex)){
+                int temp = heap.set(favoriteChildIndex, heap.get(currentLeafIndex));
+                heap.set(currentLeafIndex, temp);
+                currentLeafIndex = favoriteChildIndex;
+                favoriteChildIndex = findFavoriteChild(currentLeafIndex);
+            }
         }
-        return heap.set(1, currentLeaf);
+        heap.set(0, heap.get(0) - 1);
+        return root;
     }
-    public int peak(){
+    public int findFavoriteChild(int currentIndex){
+        if (2 * currentIndex + 1 >= heap.get(0)){
+            return -1;
+        }
+        if (isMax){
+            if(heap.get(2 * currentIndex) > heap.get(2 * currentIndex + 1))
+                return 2 * currentIndex;
+            return 2 * currentIndex + 1;
+        }
+        else {
+            if(heap.get(2 * currentIndex) < heap.get(2 * currentIndex + 1))
+                return 2 * currentIndex;
+            return 2 * currentIndex + 1;
+        }
+    }
+    public int peek(){
         if (heap.get(0) == 0)
             throw new IndexOutOfBoundsException();
         return heap.get(1);
@@ -69,7 +96,7 @@ public class MyHeap{
         }
     }
     public static void main(String[]args){
-        MyHeap alpha = new MyHeap(false);
+        MyHeap alpha = new MyHeap();
         alpha.add(4);
         alpha.add(3);
         alpha.add(7);
