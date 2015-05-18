@@ -70,21 +70,20 @@ public class RunningMedian{
         speedy.add(34);
         speedy.add(23);
         speedy.add(3);
-        System.out.println(speedy.toString());
+        System.out.println(speedy.getMedian());
         speedy.add(5);
-        System.out.println(speedy.toString());
+        //System.out.println(speedy.toString());
         speedy.add(203);
-        System.out.println(speedy.toString());
+        //System.out.println(speedy.toString());
         speedy.add(356);
         System.out.println(speedy.getMedian());
-        System.out.println(speedy.toString());
-        /**speedy.add(15);
+        //System.out.println(speedy.toString());
+        speedy.add(15);
         speedy.add(140);
         speedy.add(91);
         speedy.add(0);
         speedy.add(207);
         System.out.println(speedy.getMedian());
         System.out.println(speedy.toString());
-        **/
     }
 }

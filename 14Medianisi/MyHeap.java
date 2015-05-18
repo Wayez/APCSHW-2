@@ -60,8 +60,11 @@ public class MyHeap{
         return root;
     }
     public int findFavoriteChild(int currentIndex){
-        if (2 * currentIndex + 1 >= heap.get(0)){
+        if (2 * currentIndex >= heap.get(0)){
             return -1;
+        }
+        if (2 * currentIndex + 1 >= heap.get(0)){
+            return 2 * currentIndex;
         }
         if (isMax){
             if(heap.get(2 * currentIndex) > heap.get(2 * currentIndex + 1))
@@ -123,5 +126,13 @@ public class MyHeap{
         alpha.remove();
         alpha.remove();
         System.out.println(alpha.toString());
+        MyHeap beta = new MyHeap(false);
+        beta.add(34);
+        beta.add(23);
+        beta.add(203);
+        beta.remove();
+        System.out.println(beta.toString());
+        beta.add(356);
+        System.out.println(beta.toString());
     }
 }
