@@ -32,6 +32,10 @@ public class MyHeap{
         return ans;
     }
     public int remove(){
+        if (heap.get(0) == 1){
+            heap.set(0, heap.get(0) - 1);
+            return heap.remove(1);
+        }
         int root = peek();
         int currentLeafIndex = 1;
         int last = heap.get(0);
@@ -98,10 +102,10 @@ public class MyHeap{
     public static void main(String[]args){
         MyHeap alpha = new MyHeap();
         alpha.add(4);
+        alpha.remove();
         alpha.add(3);
         alpha.add(7);
         alpha.add(8);
-        alpha.add(35);
         alpha.add(17);
         alpha.add(9);
         System.out.println(alpha.toString());
